@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Antic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Marmelad&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Open+Sans|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:600i" rel="stylesheet">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<title>Order food online!</title>
+<style>
+.select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    .select select {
+        font-family: 'Arial';
+		font-style:cursive;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0px groove #171616;
+        border-radius: 16px;
+        background: #E6E6E6;
+        color: #7B7B7B;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+        .select select::-ms-expand {
+            display: none;
+        }
+        .select select:hover,
+        .select select:focus {
+            color: #000000;
+            background: #EBEBEB;
+        }
+        .select select:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+.select_arrow {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0px 5px;
+    border-color: #7B7B7B transparent transparent transparent;
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-top-color: #000000;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #CCCCCC;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.go {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:black;
+  border-style:solid;
+  border-color:grey;
+  border-radius: 15px;
+
+}
+
+.go:hover {background-color:grey;}
+
+.go:active {
+  background-color: red;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+a:link,a:visited
+{
+color:white;
+padding: 15px 25px;
+text-align:center;
+text-decoration:none;
+display:inline-block;
+/*background-color:black;*/
+
+}
+a:hover,a:active
+{
+/*background-color:black;*/
+color:yellow;
+}
+
+
+
+div.transbox {
+  margin: 5px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.70;
+  filter: alpha(opacity=80); 
+}
+
+
+
+div.transbox p {
+  margin:2%;
+  color:#000000;
+  font-size:30px;
+  
+}
+#navcontainer ul
+{
+margin: 0;
+padding: 2%;
+list-style-type: none;
+font-size:25px;
+font-style:normal;
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+#navcontainer ul li { display: inline; }
+footer{
+    padding-top: 5px;
+    margin-bottom: -20px;
+    background: lightgrey;
+    padding-bottom: 1px;
+	
+}
+div.social ul li{
+margin:5%;
+font-size:17px;
+display:inline;
+}
+footer{ text-align:center;color:black;}
+div.trans2 {
+  margin-right: 70px;
+  margin-top:60px;
+
+  border: 1px groove black;
+  opacity: 0.9;
+  font-size:20px;
+  width:100%;
+  filter: alpha(opacity=60); 
+}
+ul.list{font-size:20px;font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;}
+ul.x{background-color:white;}
+
+
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif; background-image: url("img4.jpg"); background-size: cover;}
+.mySlides {display:none}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  margin: 10px;
+  border:1px black;
+ 
+ 
+}
+
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*pop-ups styling*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    font-family: 'Marmelad', sans-serif;
+    background-color: gainsboro;
+    bottom: 0;
+    
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: 	#663399;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+
+/*buttons*/
+
+.but {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: black;
+  border-style: groove;
+  border-color:;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+
+.but span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.but span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.but:hover span {
+  padding-right: 25px;
+}
+
+.but:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+{
+    box-sizing: border-box;
+}
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 70px;
+    word-break: break-all;
+    color: white;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+div.options{
+
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  position: relative;
+
+
+}
+
+/* Content */
+.content {
+    background-color: white;
+    /*padding: 10px;*/
+    font-family: 'Handlee', cursive;
+    position: fixed;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+/* RSS part */
+#outer
+{
+  height:320px;
+  border-left: transparent;
+  border-right: transparent;
+  position: static;
+}
+#inner
+{
+  position: absolute;
+  white-space:nowrap;
+  height: 310px;
+  width:310px;
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+</style>
+<script>
+var t=0;
+function init()
+  {
+  console.log("Inside init");
+    obj = new Flavors();
+    obj.divinner = document.getElementById("inner");
+    obj.divinner.style.left = window.innerWidth - 5 + "px";
+  
+    obj.scroll();
+    setTimeout(obj.getFlavors,5000);
+  }
+  function Flavors()
+  {
+  console.log("Inside Flavors");
+    this.getFlavors=function(t)
+    {
+    console.log("Inside getFlavors");
+      xhr=new XMLHttpRequest();
+      xhr.onreadystatechange=obj.processflavors;
+      //xhr.open("GET","http://localhost/WebTech2/Getflavors.php",true);
+      xhr.open("GET","Getflavors_lp.php?time="+t,true);
+      xhr.send();
+    }
+
+    this.processflavors=function()
+    {
+    console.log("Inside process flavors",xhr.readyState);
+      if(xhr.readyState==4 && xhr.status==200)
+      {
+        var res=this.responseText;
+        if(res.indexOf("Fatal")== -1) 
+            {
+              var resArr=res.split(";");
+              t = resArr[1];
+          }
+
+          obj.getFlavors(t);
+    parser = new DOMParser();
+    xmlDoc = parser.parseFromString(resArr[0],"text/xml");
+    console.log("Here");
+        root=xmlDoc.documentElement;
+    console.log(root);
+        items=root.getElementsByTagName("item");
+    console.log(items);
+        obj.divinner.innerHTML="";
+        for(i in items){
+          //Get title and link
+          title=items[i].getElementsByTagName("title")[0];
+          ilink=items[i].getElementsByTagName("link")[0];
+
+        var anchor = document.createElement("a");
+        var i=document.createElement("img");
+        i.src = title.firstChild.nodeValue;
+        i.style="width:800px;height:500px;";
+        anchor.href = ilink.getAttribute("href");
+        anchor.style.display="inline";
+        anchor.style.leftMargin="10px";
+        anchor.style.background="rgba(255,255,255,0.1)";
+        anchor.style.height="310px";
+        anchor.style.width="310px";
+        anchor.appendChild(i);
+        obj.divinner.appendChild(anchor);
+        }
+      }
+    }
+    this.scroll = function()
+    {
+      if(obj.divinner.offsetLeft + obj.divinner.offsetWidth < 2)
+      {
+        obj.divinner.style.left = window.innerWidth - 5 + "px";
+      }
+    
+      else
+      {
+        obj.divinner.style.left = obj.divinner.offsetLeft - 4 + "px";
+      }
+    
+      setTimeout(obj.scroll, 20);
+    }
+  }
+</script>
+</head>
+<body onload="init()">
+<div class="header"><h1 style="font-family: 'Righteous', cursive;"><b>Bon Appetit</b></h1>
+<div align="right" class="options" style="font-size: 30px;top:-220px;font-family: 'Antic', sans-serif;"><a  href="login.html" target="_self"><i class="fa fa-user" > Login</i></a><a href="signup.html" target="_self"><pre>     </pre> <i class="fa fa-user" >Sign Up</i></a><a href="help.html" target="_blank"><pre>    </pre> <i class="fa fa-question-circle-o">Help</i></a></div></div><br>
+<!--<h2 font-family="georgian" align="left">BEAUTIFUL QUOTATION</h2>-->
+<div style="text-align:center;font-size:70px;;color:#F0E68C;font-family: 'Pacifico', cursive;"><i><b>Delicious food awaits you!</b></i></div>
+<div style="text-align:center;font-size:20px;;color:#FFEBCD;font-family: 'Josefin Sans', sans-serif;"><b>Order food from the best restaurants near you</b></div><br><br>
+<div align="center"></br></br>
+
+<form action="" method="get"><div class="select">
+<select name="Select any desired location" style="width:700px;height:50px;font-size:20px;font-family:Lucida Console"><span>Select an area:</span>
+
+<option value="" selected>Select an Area</option>
+<option value="Bangalore" >Indiranagar</option>
+<option value="Chennai">MG Road</option>
+<option value="Hyderabad">Koramangala</option>
+<option value="Mumbai">BTM Layout</option>
+<option value="Kolkata">Marathahalli</option>
+<option value="Delhi">New BEL Road</option>
+
+</select> </div>
+<input type="button" value="Go" class="go" onclick="openWin()">
+
+</form>
+
+<br><br><hr>
+</div>
+
+<div id="mapholder"></div>
+<div class="transbox">
+<p style="font-family: 'Josefin Slab', serif;font-size: 40px"><b>Discover restaurants by type of meal!</b>
+<div id="navcontainer">
+<ul class="x">
+<li><button id="myBtn1" class="but">Breakfast</button></li>   |                 
+<li><button id="myBtn2" class="but">Lunch</button></li>      |                 
+<li><button id="myBtn3" class="but">Dinner</button></li>      |         
+<li><button id="myBtn4" class="but">Cafes</button>      |     
+<li><button id="myBtn5" class="but">Buffet Restaurants</button></li>                <!-- Trigger/Open The Modal -->
+</div>
+</ul></p>
+</div>
+<!-- The Modal -->
+<div id="myModal5" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="c5" class="close">&times;</span>
+      <h2><b>BUFFET RESTAURANTS</b></br>Specially for you</h2>
+    </div>
+    <div class="modal-body">
+	<ol style-type="square">
+	<li>BonSouth</li>
+	<li>Silver Metro</li>
+	<li>Holy Flames</li>
+	<li>Barbeque Nation</li>
+	</ol>
+    </div>
+  </div>
+
+</div>
+
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="c1" class="close">&times;</span>
+      <h2><b>Breakfast Restaurants</b></br>Specially for you</h2>
+    </div>
+    <div class="modal-body">
+	<dl style-type="square">
+	<dt>1.A2B</dt>
+	<dd>Idli,Vada,Masala Dosa,Set Dosa,Upma</dd>
+	<dt>2.Coffee House</dt>
+	<dd>Coffee,Tea,North Indian,South Indian</dd>
+	<dt>3.Bomabay Wafers</dt>
+	<dd>Momos,Mini Pizza,Pastry,Chips,Dabeli,Vada Paw</dd>
+	<dt>4.Banagalore Snacks</dt>
+	<dd>Sandwich,Chips,Pasta,Chocolate Shake,Ice cream</dd>
+	<dt>5.Roll Over</dt>
+	<dd>Bread,Tea,Jam,Omlette,Puri,Halwa</dd>
+	<dt>6.Ruchis Point</dt>
+	<dd>Veg Roll,Chicken Roll,Maggie,Noodles,Paneer Chilly,Manchurian</dd>
+	<dt>7.Cafe Coffee Day</dt>
+	<dd>Coffe,Mocha,Brownie,Chocolate Shots,Burgers</dd>
+	<dt>8.Sandwich Makers</dt>
+	<dd>Where you get sandwiches of 100 varieties</dd>
+	<dt>9.Fries World</dd>
+	<dd>French Fries,Potato fingers,Chicken fingers with different varieties of dips</dd>
+	<dt>10.Cheesy Breakfasts</dt>
+	<dd>Choose any snack and add cheese to it in different flavours and amounts</dd>
+	</dl>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="c2" class="close">&times;</span>
+      <h2><b>Lunch Restaurants</b></br>Specially for you</h2>
+    </div>
+    <div class="modal-body">
+	<dl style-type="square">
+	<dt>1.KFC</dt>
+	<dd>4 pc. hot and crispy, Chicken Zinger,Chicken Popcorn,KFC Krushers</dd>
+	<dt>2.Pizza Hut</dt>
+	<dd>Veg Supreme Pizza,Non-Veg Supreme Pizza,Pasta,Garlic Bread</dd>
+	<dt>3.Ammi's Biryani</dt>
+	<dd>Executive Hyderabadi Biryani(Veg and Non-Veg),Paratha,Seekh Kabab,Sprite,Coke</dd>
+	<dt>4.Ovenstory Pizza</dt>
+	<dd>Napoli Delight,Veg and Non-Veg Pizza.Cheese Dip,Molten Lava Cake</dd>
+	<dt>5.Dominoes</dt>
+	<dd>Veg Onion Pizza,Non-Veg Pizza,Pasta,Garlic Breadsticks,Zingy Parcel</dd>
+	<dt>6.Freshmenu</dt>
+	<dd>Chicken Speghatti,Grill Burger,Chicken Bowl,Garlic Bread Supreme</dd>
+	<dt>7.Corner House</dt>
+	<dd>Ice Creams,Milkshakes,Mocha,Brownie,Sandwich,Mac and Cheese</dd>
+	<dt>8.Pizzeria</dt>
+	<dd>Pizza,Pasta,Speghatti,Cheese Mushroom Balls,Veg Potato Shots</dd>
+	<dt>9.McDonald's</dt>
+	<dd>Burgers(Veg and Non-Veg),McFlurry,Fries,Coke</dd>
+	<dt>10.Nandhini Deluxe</dt>
+	<dd>Fried Rice,Biryani(Veg and Non-Veg),Roti,Kulcha,Chicken Tikka,Baby Corn Chilly</dd>
+	</dl>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal4" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="c4" class="close">&times;</span>
+      <h2><b>Cafes</b></br>Specially for you</h2>
+    </div>
+    <div class="modal-body">
+	<dl style-type="square">
+	<dt>1.Caf-Eleven</dt>
+	<dd>Rs.450 for two(approx)</dd>
+	<dt>2.Penthouse Cafe</dt>
+	<dd>Rs.750 for two(approx)</dd>
+	<dt>3.San Churro Cafe</dt>
+	<dd>Rs.750 for two(approx)</dd>
+	<dt>4.Cafe Vivacity</dt>
+	<dd>Rs.500 for two(approx)</dd>
+	<dt>5.Casablanka</dt>
+	<dd>Rs.550 for two(approx)</dd>
+	<dt>6.Hide Out Cafe</dt>
+	<dd>Rs.300 for two(approx)</dd>
+	<dt>7.Cafe Nova</dt>
+	<dd>Rs.600 for two(approx)</dd>
+	<dt>8.Catch-Up-Ino</dt>
+	<dd>Rs.800 for two(approx)</dd>
+	<dt>9.Cloud Cafe</dt>
+	<dd>Rs.600 for two(approx)</dd>
+	<dt>10.Fab Cafe</dt>
+	<dd>Rs.550 for two(approx)</dd>
+	</dl>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal3" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="c3" class="close">&times;</span>
+      <h2><b>Dinner Restaurants</b></br>Specially for you</h2>
+    </div>
+    <div class="modal-body">
+	<dl style-type="square">
+	<dt>1.Bejing Bites</dt>
+	<dd>Drums of Heaven,Lemon Chicken,Veg Garlic Chowmein,Dragon Chopsuey</dd>
+	<dt>2.Roving Feast</dt>
+	<dd>Pasta,Momos,Manchurians,Fried Rices,Chillies,Noodles</dd>
+	<dt>3.Chung Wah</dt>
+	<dd>Soups,Manchurians,Fried Rice,Prawns,Buddha's Delight</dd>
+	<dt>4.Box8</dt>
+	<dd>Rajma Chawal,Dal Makhani,Kabab,Fusion Boxes,Biryani</dd>
+	<dt>5.1947</dt>
+	<dd>Tandoori Roti,Pulao,Paneer Tikka,Soups,Fried Rice,Curry</dd>
+	<dt>6.Swadesh Tadka</dt>
+	<dd>Phulka,Biryani,Masala Rice,Fried Rice,Dal Tadka,Noodles,Choupsey</dd>
+	<dt>7.Anna Kuteera</dt>
+	<dd>South Indian,North Indian,Sweets</dd>
+	<dt>8.Faasos</dt>
+	<dd>Barbeque Chicken,Wraps,Biryani,Rice,Royal Indian Meal</dd>
+	<dt>9.Donne Biryani</dt>
+	<dd>Biryani,Chilli,Kabab,Tandoori,Egg Dishes</dd>
+	<dt>10.Milary Restaurant</dt>
+	<dd>Chcken Lollipop,Kabab,Biryani,Appetizers</dd>
+	</dl>
+    </div>
+  </div>
+
+</div>
+
+
+<br><br>
+<div class ="transbox">
+<p style="font-family: 'Josefin Slab', serif;font-size: 40px"><b>Popular this week!</p> <br>
+<div align="center">
+<a href="new_pizza.html" target="_blank" style="background-color:white"><img src="Pizzahut.jpg" alt="Error displaying"></a>
+<!-- <a href="cornerhouse.php" target="_blank" style="background-color:white"><img src="corner.jpg" alt="Error displaying" height="150px" width="150px"></a> -->
+<a href="dominos_rest.php" target="_blank" style="background-color:white"><img src="dominos.png" alt="Error displaying" height="150px" width="150px"></a>
+<!-- <a href="kfc.html" target="_blank" style="background-color:white"><img src="kfc.png" alt="Error displaying" height="150px" width="150px"></a> -->
+<a href="Mcd_rest.php" target="_blank" style="background-color:white"><img src="mcd.jpg" alt="Error displaying" height="150px" width="150px"></a>
+<a href="ccd2.html" target="_blank" style="background-color:white"><img src="ccd.png" alt="Error displaying" height="150px" width="150px"></a>
+</div>
+</div>
+<div id="outer">
+  <div id="inner" ></div>
+</div>
+<br></br><br></br><br></br><br></br>
+
+
+<script>
+
+//Pop-up
+// Get the modal
+var modal5 = document.getElementById('myModal5');
+
+// Get the button that opens the modal
+var btn5 = document.getElementById("myBtn5");
+
+// Get the <span> element that closes the modal
+var span5 = document.getElementById("c5");
+
+// When the user clicks the button, open the modal 
+btn5.onclick = function() {
+    modal5.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span5.onclick = function() {
+    modal5.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal5) {
+        modal5.style.display = "none";
+    }
+}
+
+var modal1 = document.getElementById('myModal1');
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+var span1 = document.getElementById("c1");
+
+// When the user clicks the button, open the modal 
+btn1.onclick = function() {
+    modal1.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function() {
+    modal1.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+}
+
+
+var modal2 = document.getElementById('myModal2');
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementById("c2");
+
+// When the user clicks the button, open the modal 
+btn2.onclick = function() {
+    modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+    modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+
+
+var modal4 = document.getElementById('myModal4');
+
+// Get the button that opens the modal
+var btn4 = document.getElementById("myBtn4");
+
+// Get the <span> element that closes the modal
+var span4 = document.getElementById("c4");
+
+// When the user clicks the button, open the modal 
+btn4.onclick = function() {
+    modal4.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span4.onclick = function() {
+    modal4.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal4) {
+        modal4.style.display = "none";
+    }
+}
+
+
+var modal3 = document.getElementById('myModal3');
+
+// Get the button that opens the modal
+var btn3 = document.getElementById("myBtn3");
+
+// Get the <span> element that closes the modal
+var span3 = document.getElementById("c3");
+
+// When the user clicks the button, open the modal 
+btn3.onclick = function() {
+    modal3.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span3.onclick = function() {
+    modal3.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal3) {
+        modal3.style.display = "none";
+    }
+}
+
+function openWin() {
+    window.open("Restaurants.html");
+}
+
+</script>
+
+
+<br> <br>
+<footer>
+<div class="box" style="font-family: 'Open Sans Condensed', sans-serif; ">
+<div class="social">
+<ul>
+<li><a href="AboutUs.html" target="_blank" style="text-decoration:none;color:black;background-color:lightgrey">About Us</a></li>
+<li><a href="T&C.html" target="_blank" style="text-decoration:none;color:black;background-color:lightgrey">Terms and Conditions</a></li>
+<li><a href="Refunds&Cancellation.html" target="_blank" style="text-decoration:none;color:black;background-color:lightgrey">Refunds and Cancellation</a></li>
+<li><a href="Career.html" target="_blank" style="text-decoration:none;color:black;background-color:lightgrey">Careers</a></li>
+
+
+</ul>
+</div>
+</div>
+<div class="fancy" style="background: lightgrey;">
+<!--Connect with us,links-->
+<span style="font-family: 'Open Sans Condensed', sans-serif;">Connect with us!</span><br>
+<img src="soc.jpg"/><br>
+
+
+&copy 2019, Bon Appetit
+</div>
+</footer>
+</body>
+</html>

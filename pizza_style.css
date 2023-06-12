@@ -1,0 +1,55 @@
+table {
+    width: 80%;
+    table-layout: fixed;
+	margin-left:55px;
+}
+header{background-color:white;opacity:0.7;color:white;font-size:20px;margin:0%;}
+body {
+ background-image: url("pizza_back.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  
+  
+  
+}
+
+.cap{
+	color:black;
+}
+
+
+#navcontainer ul
+{
+margin: 0;
+padding: 2%;
+list-style-type: none;
+font-size:25px;
+font-style:normal;
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+#navcontainer ul li { display: inline; }
+footer{
+    padding-top: 5px;
+    margin-bottom: -20px;
+    background: #fff;
+    padding-bottom: 1px;
+	
+}
+div.social ul li{
+margin:5%;
+font-size:17px;
+display:inline;
+}
+footer{ text-align:center;color:black;font-style:italic;}
+div.trans2 {
+  margin: 10px;
+  background-color:DarkSlateGrey;
+  border: 1px solid black;
+  opacity: 0.9;
+  font-size:20px;
+  filter: alpha(opacity=60); 
+}
+ul.list{font-size:20px;font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;}
+ul.x{background-color:white;}

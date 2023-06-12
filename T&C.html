@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> T&C </title>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Open+Sans|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    .select select {
+        font-family: 'Arial';
+    font-style:cursive;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0px groove #171616;
+        border-radius: 16px;
+        background: #E6E6E6;
+        color: #7B7B7B;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+        .select select::-ms-expand {
+            display: none;
+        }
+        .select select:hover,
+        .select select:focus {
+            color: #000000;
+            background: #EBEBEB;
+        }
+        .select select:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+*{
+  font-family: 'Marmelad', sans-serif;;
+}
+.select_arrow {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0px 5px;
+    border-color: #7B7B7B transparent transparent transparent;
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-top-color: #000000;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #CCCCCC;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.go {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:black;
+  border-style:solid;
+  border-color:grey;
+  border-radius: 15px;
+
+}
+
+.go:hover {background-color:grey;}
+
+.go:active {
+  background-color: red;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+a:link,a:visited
+{
+color:white;
+padding: 15px 25px;
+text-align:center;
+text-decoration:none;
+display:inline-block;
+/*background-color:black;*/
+
+}
+a:hover,a:active
+{
+/*background-color:black;*/
+color:yellow;
+}
+
+
+
+
+div.transbox p {
+  
+  font-color:white;
+  font-size:30px;
+  
+}
+#navcontainer ul
+{
+margin: 0;
+padding: 2%;
+list-style-type: none;
+font-size:25px;
+font-style:normal;
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+#navcontainer ul li { display: inline; }
+footer{
+    padding-top: 5px;
+    margin-bottom: -20px;
+    background: white;
+    padding-bottom: 1px;
+  
+}
+div.social ul li{
+margin:5%;
+font-size:17px;
+display:inline;
+}
+footer{ text-align:center;color:black;}
+div.trans2 {
+  margin-right: 70px;
+  margin-top:60px;
+  color: white;
+  border: 1px groove black;
+  opacity: 0.9;
+  font-size:20px;
+  width:100%;
+  filter: alpha(opacity=60); 
+}
+ul.list{font-size:20px;font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;font-color:white;}
+ul.x{background-color:white;}
+
+
+* {box-sizing:border-box}
+body {background-image: url("img4.jpg"); background-size: cover;}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  margin: 10px;
+  border:1px black;
+ 
+ 
+}
+
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*pop-ups styling*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    font-family: 'Marmelad', sans-serif;
+    background-color: gainsboro;
+    bottom: 0;
+    
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:   #663399;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+
+/*buttons*/
+
+
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 70px;
+    word-break: break-all;
+    color: white;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+div.options{
+
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  position: relative;
+
+
+}
+
+/* Content */
+.content {
+    background-color: white;
+    /*padding: 10px;*/
+    font-family: 'Handlee', cursive;
+    position: fixed;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+body {
+    background-color: white;
+    padding: 20px;
+    font-family: Arial;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+/* RSS part */
+#outer
+{
+  height:320px;
+  border-left: transparent;
+  border-right: transparent;
+  position: static;
+}
+#inner
+{
+  position: absolute;
+  white-space:nowrap;
+  height: 310px;
+  width:310px;
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+</style>
+</head>
+<body>
+<div class="header"><h1 style="font-family: 'Righteous', cursive;"><b>Bon Appetit</b></h1>
+<div align="right" class="options" style="font-size: 30px;top:-150px;font-family: 'Antic', sans-serif;"><a  href="login.html" target="_self"><i class="fa fa-user" > Login</i></a><a href="signup.html" target="_self"><pre>     </pre> <i class="fa fa-user" >Sign Up</i></a><a href="help.html" target="_blank"><pre>    </pre> <i class="fa fa-question-circle-o">Help</i></a></div></div><br>
+
+<br><br>
+<p style="color:white;font-size:24px;"><b> HOME>Terms & Conditions</b></p>
+<div class="transbox" style="color:white;font-size:20px;">
+<ol type="I">
+<li><b>Acceptance of Terms</b></li>
+<p style="color:white;font-size:20px;">Thank you for using Flavors101. These Terms of Service (the "Terms") are intended to make you aware of your legal rights and responsibilities with respect to your access to and use of the Flavors101 website at www.Flavors101.com (the "Site") and any related mobile or software applications ("Flavors101 Platform") including but not limited to delivery of information via the website whether existing now or in the future that link to the Terms (collectively, the "Services").</p>
+<p style="color:white;font-size:20px;"><i>These Terms are effective for all existing and future Flavors101 users, including but without limitation to users having access to restaurant business page to manage their claimed business listings.</i></p>
+<p style="color:white;font-size:20px;">Please read these Terms carefully. By accessing or using the Flavors101 Platform, you are agreeing to these Terms and concluding a legally binding contract with Flavors101 Media Pvt. Ltd. and/or its affiliates or, if you are in the United States, with Flavors101 USA, LLC and/or its affiliates (hereinafter collectively referred to as Flavors101). You may not use the Services if you do not accept the Terms or are unable to be bound by the Terms. Your use of the Flavors101 Platform is at your own risk, including the risk that you might be exposed to content that is objectionable, or otherwise inappropriate.</p>
+<p style="color:white;font-size:20px;">In order to use the Services, you must first agree to the Terms. You can accept the Terms by:</p>
+<ul>
+<li>Clicking to accept or agree to the Terms, where it is made available to you by Flavors101 in the user interface for any particular Service; or</li>
+<li>Actually using the Services. In this case, you understand and agree that Flavors101 will treat your use of the Services as acceptance of the Terms from that point onwards.</li>
+</ul>
+</br>
+<li><b>Eligibility to use services</b></li>
+</br></br>
+<ol >
+<li>You hereby represent and warrant that you are at least eighteen (18) years of age or above and are fully able and competent to understand and agree the terms, conditions, obligations, affirmations, representations, and warranties set forth in these Terms.</li>
+<li>Compliance with Laws. You are in compliance with all laws and regulations in the country in which you live when you access and use the Services. You agree to use the Services only in compliance with these Terms and applicable law, and in a manner that does not violate our legal rights or those of any third party(ies).</li>
+</ol>
+<li><b>Changes to the terms</b></li>
+<ol>
+<p style="color:white;font-size:20px;">Flavors101 may vary or amend or change or update these Terms, from time to time entirely at its own discretion. You shall be responsible for checking these Terms from time to time and ensure continued compliance with these Terms. Your use of Flavors101 Platform after any such amendment or change in the Terms shall be deemed as your express acceptance to such amended/changed terms and you also agree to be bound by such changed/amended Terms.</p>
+</ol>
+</br>
+<li><b>Translation of the terms</b></li>
+<ol>
+<p style="color:white;font-size:20px;">Flavors101 may provide a translation of the English version of the Terms into other languages. You understand and agree that any translation of the Terms into other languages is only for your convenience and that the English version shall govern the terms of your relationship with Flavors101. Furthermore, if there are any inconsistencies between the English version of the Terms and its translated version, the English version of the Terms shall prevail over others.</p>
+</br>
+</ol>
+<li><b>Provision of the services being offered by Flavors101</b></li>
+<ol>
+<li>Flavors101 is constantly evolving in order to provide the best possible experience and information to its users. You acknowledge and agree that the form and nature of the Services which Flavors101 provides, may require effecting certain changes in it, therefore, Flavors101 reserves the right to suspend/cancel, or discontinue any or all products or services at any time without notice, make modifications and alterations in any or all of its contents, products and services contained on the site without any prior notice.</li>
+<li>We, the software, or the software application store that makes the software available for download may include functionality to automatically check for updates or upgrades to the software. Unless your device, its settings, or computer software does not permit transmission or use of upgrades or updates, you agree that we, or the applicable software or software application store, may provide notice to you of the availability of such upgrades or updates and automatically push such upgrade or update to your device or computer from time-to-time. You may be required to install certain upgrades or updates to the software in order to continue to access or use the Services, or portions thereof (including upgrades or updates designed to correct issues with the Services). Any updates or upgrades provided to you by us under the Terms shall be considered part of the Services.</li>
+<li>You acknowledge and agree that if Flavors101 disables access to your account, you may be prevented from accessing the Services, your account details or any files or other content, which is contained in your account.</li>
+<li>You acknowledge and agree that while Flavors101 may not currently have set a fixed upper limit on the number of transmissions you may send or receive through the Services, Flavors101 may set such fixed upper limits at any time, at Flavors101's discretion.</li>
+<li>By using Flavors101's Services you agree to the following disclaimer: The Content on these Services is for informational purposes only. Flavors101 disclaims any liability for any information that may have become outdated since the last time the particular piece of information was updated. Flavors101 reserves the right to make changes and corrections to any part of the Content on these Services at any time without prior notice. Flavors101 does not guarantee quality of the Goods, the prices listed in menus or the availability of all menu items at any restaurant. Unless stated otherwise, all pictures and information contained on these Services are believed to be owned by or licensed to Flavors101. Please email a takedown request (by using the Contact Us link on the home page) to the webmaster if you are the copyright owner of any Content on these Services and you think the use of the above material violates Your copyright in any way. Please indicate the exact URL of the webpage in your request. All images shown here have been digitized by Flavors101. No other party is authorized to reproduce or republish these digital versions in any format whatsoever without the prior written permission of Flavors101.</li>
+<li>Flavors101 reserves the right to charge subscription and/or membership fees from a user, by giving reasonable prior notice, in respect of any product, service or any other aspect of the Flavors101 Platform anytime in future.</li>
+<li>Flavors101 may from time to time introduce referral and/or incentive based programs for its users (Program). These Program(s) maybe governed by their respective terms and conditions. By participating in the Program, Users are bound by the Program terms and conditions as well as the Flavors101 Platform terms. Further, Flavors101 reserves the right to terminate / suspend the Users account and/or credits / points earned and/or participation of the User in the Program if Flavors101 determines in its sole discretion that the User has violated the rules of the Program and/or has been involved in activities that are in contravention of the Program terms and/or Flavors101 Platform terms or has engaged in activities which are fraudulent / unlawful in nature. Furthermore, Flavors101 reserves the right to modify, cancel and discontinue its Program without notice to the User.</li>
+</ol>
+
+</ol>
+</div>
+<script>
+</script>
+<footer>
+<div class="box" style="font-family: 'Open Sans Condensed', sans-serif;">
+<div class="social">
+<ul>
+<li><a href="AboutUs.html" target="_blank" style="text-decoration:none;color:black;background-color:white">About Us</a></li>
+<li><a href="T&C.html" target="_self" style="text-decoration:none;color:black;background-color:white">Terms and Conditions</a></li>
+<li><a href="Refunds&Cancellation.html" target="_blank" style="text-decoration:none;color:black;background-color:white">Refunds and Cancellation Policy</a></li>
+<li><a href="Career.html" target="_blank"  style="text-decoration:none;color:black;background-color:white">Careers</a></li>
+</ul>
+</div>
+</div>
+<div class="fancy">
+<!--Connect with us,links-->
+&copy 2017, Flavors101
+</div>
+</footer>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Open+Sans|Pacifico" rel="stylesheet">
+<title>Welcome to Pizza Hut!</title>
+<link rel="stylesheet" type="text/css" href="new_pizza.css">
+<script>
+function init(){
+		
+		xhr = new XMLHttpRequest();	
+			if(xhr)
+			{
+				xhr.onreadystatechange = getContent;
+				xhr.open("GET", "content.txt", true);
+				xhr.send(null);
+			}	
+		}
+
+		function getContent(){
+		
+		if(xhr.readyState=="4"&&xhr.status==200){
+				var arr=(xhr.responseText).split(";");
+				console.log(arr);
+				document.getElementById("logo").innerHTML=arr[0];
+				document.getElementById("pic1").innerHTML=arr[1];
+				document.getElementById("pic2").innerHTML=arr[1];
+				document.getElementById("pic3").innerHTML=arr[1];
+				document.getElementById("pic4").innerHTML=arr[1]; 
+				document.getElementById("pic5").innerHTML=arr[1]; 
+				document.getElementById("pic6").innerHTML=arr[1]; 
+				setTimeout(getRow1, 4000);	
+		  }
+		}
+
+		function getRow1(){
+		
+			xhr.open("GET", "image.txt", true);
+			xhr.onreadystatechange = showRow1;
+			xhr.send(null);
+		
+		
+		}
+		function showRow1()
+		{
+			if(xhr.readyState == 4 && xhr.status == 200)
+			{
+				var arr=(xhr.responseText).split(";");
+				document.getElementById("pic1").innerHTML = arr[0];	
+				document.getElementById("pic2").innerHTML = arr[1];	
+				document.getElementById("pic3").innerHTML = arr[2];	
+			}
+			setTimeout(getRow2,2000);
+			
+		}
+		function getRow2(){
+		
+				xhr.onreadystatechange=showRow2;
+				xhr.open("GET","image2.txt",true);
+				xhr.send();
+		}
+		function showRow2(){
+		
+				if(xhr.readyState==4 && xhr.status==200){
+					var arr=(xhr.responseText).split(";");
+					document.getElementById("pic4").innerHTML = arr[0];	
+					document.getElementById("pic5").innerHTML = arr[1];	
+					document.getElementById("pic6").innerHTML = arr[2];	
+					
+				}
+		
+		}
+
+</script>
+</head>
+<body onload="init()">
+
+<div class="about">
+<div class = "log" id="logo"></div>
+<div class="cap" style="text-align:center;font-size:40px;font-family:cursive;color: white">
+-------<b><i>Think Pizza.Think Pizza hut!</i></b>------
+</div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div id="pic1"></div>
+    <p style="color:white;">Supreme<br>
+			<b>Paneer Vegorama</b><br><br>
+		<i>Paneer, Onion, Capsicum, Black Olives, Red Paprika</i><br>
+		Crust: Pan | Size: Medium <br>
+	    Rs.490</p>
+
+  </div>
+  <div class="column">
+    <div id="pic2"></div>
+    <p style="color:white;">Supreme<br>
+		<b>Exotica</b><br><br>
+		<i>Red Capsicum, Green Capsicum, Baby Corn, Black Olives, Jalapenos</i><br>
+		Crust: Pan | Size: Medium<br>
+		Rs.490</p>
+  </div>
+  <div class="column">
+    <div id="pic3"></div>
+    <p style="color:white;">Supreme<br>
+		<b>Veggie Supreme</b><br><br>
+		<i>Onion, Capsicum, Mushroom, Red Paprika, Black Olives, Sweet Corn</i><br>
+         Crust: Pan | Size: Medium <br>
+		 Rs.490</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div id="pic4"> </div>
+    <p style="color:white;">Supreme<br>
+		<b>Chicken Supreme</b><br><br>
+		<i>Onion, Capsicum, Mushroom, Red Paprika, Black Olives, Sweet Corn</i><br>
+         Crust: Pan | Size: Medium <br>
+		 Rs.570</p>
+    
+  </div>
+  <div class="column">
+    <div id="pic5"></div>
+    <p style="color:white;">Supreme<br>
+        <b>Triple Chicken Feast</b><br><br>
+        <i>Chicken Keema, Chicken Meatball, Chicken Hot & Chilly, Capsicum, Onion, Sweet Corn</i><br>
+         Crust: Pan | Size: Medium<br>
+		 Rs.570</p>
+  </div>
+  <div class="column">
+    <div id="pic6"></div>
+    <p style="color:white;">Supreme<br>
+        <b>Chicken Italiano</b><br><br>
+        <i>Chicken Pepperoni, Chicken Sausage, Mushroom, Capsicum, Black Olives</i><br>
+         Crust: Pan | Size: Medium<br>
+		 Rs.570</p>
+  </div>
+</div>
+
+
+<footer>
+<div class="box">
+<div class="social">
+<ul>
+<li><a href="AboutUs.html" target="_blank" style="text-decoration:none;color:black;background-color:white">About Us</a></li>
+<li><a href="T&C.html" target="_blank" style="text-decoration:none;color:black;background-color:white">Terms and Conditions</a></li>
+<li><a href="Refunds&Cancellation.html" target="_blank" style="text-decoration:none;color:black;background-color:white">Refunds and Cancellation Policy</a></li>
+<li><a href="Career.html" target="_blank" style="text-decoration:none;color:black;background-color:white">Careers</a></li>
+
+</ul>
+</div>
+</div>
+<div class="fancy">
+<!--Connect with us,links-->
+  2019, Bon Appetit
+</div>
+</footer>
+
+
+</body>
+</html>

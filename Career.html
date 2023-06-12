@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Career</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Open+Sans|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Refunds and Cancellation</title><style>
+.select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    .select select {
+        font-family: 'Arial';
+    font-style:cursive;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0px groove #171616;
+        border-radius: 16px;
+        background: #E6E6E6;
+        color: #7B7B7B;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+        .select select::-ms-expand {
+            display: none;
+        }
+        .select select:hover,
+        .select select:focus {
+            color: #000000;
+            background: #EBEBEB;
+        }
+        .select select:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+*{
+  font-family: 'Marmelad', sans-serif;;
+}
+.select_arrow {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0px 5px;
+    border-color: #7B7B7B transparent transparent transparent;
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-top-color: #000000;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #CCCCCC;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.go {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:black;
+  border-style:solid;
+  border-color:grey;
+  border-radius: 15px;
+
+}
+
+.go:hover {background-color:grey;}
+
+.go:active {
+  background-color: red;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+a:link,a:visited
+{
+color:white;
+padding: 15px 25px;
+text-align:center;
+text-decoration:none;
+display:inline-block;
+/*background-color:black;*/
+
+}
+a:hover,a:active
+{
+/*background-color:black;*/
+color:yellow;
+}
+
+div.transbox p {
+  
+  
+  font-size:30px;
+  
+}
+#navcontainer ul
+{
+margin: 0;
+padding: 2%;
+list-style-type: none;
+font-size:25px;
+font-style:normal;
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+#navcontainer ul li { display: inline; }
+footer{
+    padding-top: 5px;
+    margin-bottom: -20px;
+    background: lightgrey;
+    padding-bottom: 1px;
+  
+}
+div.social ul li{
+margin:5%;
+font-size:17px;
+display:inline;
+}
+footer{ text-align:center;color:black;}
+div.trans2 {
+  margin-right: 70px;
+  margin-top:60px;
+  color: black;
+  border: 1px groove black;
+  opacity: 0.9;
+  font-size:20px;
+  width:100%;
+  filter: alpha(opacity=60); 
+}
+ul.list{font-size:20px;font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;}
+ul.x{background-color:white;}
+
+
+* {box-sizing:border-box}
+body {background-image: url("img4.jpg"); background-size: cover;}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  margin: 10px;
+  border:1px black;
+ 
+ 
+}
+
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*pop-ups styling*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    font-family: 'Marmelad', sans-serif;
+    background-color: gainsboro;
+    bottom: 0;
+    
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:   #663399;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+
+/*buttons*/
+
+
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 40px;
+    word-break: break-all;
+    color: white;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+div.options{
+
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  position: relative;
+
+
+}
+
+/* Content */
+.content {
+    background-color: white;
+    /*padding: 10px;*/
+    font-family: 'Handlee', cursive;
+    position: fixed;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+/* RSS part */
+#outer
+{
+  height:320px;
+  border-left: transparent;
+  border-right: transparent;
+  position: static;
+}
+#inner
+{
+  position: absolute;
+  white-space:nowrap;
+  height: 310px;
+  width:310px;
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+div.transbox {
+  margin: 10px;
+  background-color:	#FFFAFA;
+  border: 1px solid black;
+   
+}
+
+div.transbox p {
+  margin:2%;
+  color:black;
+  font-size:15px;
+  }
+footer{ text-align:center;color:black;}
+div.trans2 {
+  margin: 10px;
+  background-color:	#F5FFFA;
+  border: 1px solid black;
+  opacity: 0.9;
+  font-size:40px;
+  filter: alpha(opacity=60); 
+  font-family: 'Kaushan Script', cursive;
+}
+#navcontainer ul
+{
+margin: 0;
+padding: 2%;
+list-style-type: none;
+font-size:25px;
+font-style:normal;
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+
+#navcontainer ul li { display: inline; }
+footer{
+    padding-top: 5px;
+    margin-bottom: -20px;
+    background: #fff;
+    padding-bottom: 1px;
+	
+}
+div.social ul li{
+margin:5%;
+font-size:17px;
+display:inline;
+}
+ul.list{font-size:20px;font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;}
+ul.x{background-color:white;}
+
+
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+table {
+margin: 0px; border: 3px inset #DC143C;
+    border-collapse: collapse;
+    width: 100%;
+	font-size:25px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #FFE4E1}
+</style>
+</head>
+<body>
+
+<div class="header"><h1 style="font-family: 'Righteous', cursive;"><b>Bon Appetit</b></h1>
+<div align="right" class="options" style="font-size: 30px;top:-150px;font-family: 'Antic', sans-serif;"><a  href="login.html" target="_self"><i class="fa fa-user" > Login</i></a><a href="signup.html" target="_self"><pre>     </pre> <i class="fa fa-user" >Sign Up</i></a><a href="help.html" target="_blank"><pre>    </pre> <i class="fa fa-question-circle-o">Help</i></a></div></div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="career2.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="career1.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="career3.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<p ><b> HOME>CAREERS</b></p>
+<div class="transbox">
+<p style="color:orange;"><b>Join the Bon Appetit Team!</b></p>
+<p>At Bon Appetit, we're building an on-demand food delivery startup that is delighting many customers across India with time-guaranteed deliveries and an obsession with keeping customer service levels ridiculously high. We are changing the course of online food delivery in the country, one city at a time!</p>
+<p>Bon Appetit offers you an exciting and challenging environment in which you can grow and thrive. We are offering you roles in which you will be fundamentally impacting the success of the company.</p>
+<p>At Bon Appetit, we are looking for people who are concerned about the customer at all times. Customer centricity is a key tenet of all our processes.</p>
+<p>We value creativity, hard work, initiative and radical ideas.</p>
+<p>If this sounds exciting to you, then come have a chat with us ASAP.</p>
+
+<div class="trans2">
+<p style="font-size:30px;color:orange;font-family:cursive;"><b>Open Positions !</b></p>
+<table>
+<tr style="font-family:cursive;"><td>Job operation</td><td>Experience</td><td align="center">Requirements For the Job</td></tr>
+<div id="j1" >
+<tr style="font-family:Arial;"><td> Area Operations Manager</td><td>2-5 Years</td><td><p>Should have a bike</p><p>Should be available to work on weekends</p><p>Should know local geographical area</p><p>Should have handled a team and blue collar employees</p><p>Male candidates are preferred</p><p>Should be okay to travel within the City</p><p>MS Office proficiency : Very Good</p></td></tr>
+</p></td></tr>
+<tr style="font-family:Arial;"><td>Assistant Manager-Training</td><td>3 Years</td><td><p>Strong Communication. English and local language is mandatory. Fluency in Hindi language is added advantage.</p><p>Any graduate. Degree in SCM or retails will be added advantage.
+</p><p>Male candidates are preferred</p><p>Should be okay to travel within the City</p><p>MS Office proficiency : Very Good</p></td></tr>
+<tr style="font-family:Arial;"><td>Account Manager</td><td>1-3 Years</td><td><p> Relevant experience of 1-3 years and in the space of partner/account relationship management</p><p> Graduate in any discipline from a reputed institution</p><p> Vendor management skills</p><p> Working closely with multiple operations teams to ensure smooth functioning</p><p>Male candidates are preferred</p><p>MS Office proficiency : Very Good</p></td></tr>
+<tr style="font-family:Arial;"><td> Assistant Manager - Sourcing</td><td>2-7 Years</td><td><p>Should have a bike</p><p>Strong communication and convincing skills and the ability to meet daily, weekly, and long-term requirements and goals.</p><p>Should have handled a team and blue collar employees</p><p>Male candidates are preferred</p><p>Should be okay to travel within the City</p><p>MS Office proficiency : Very Good</p></td></tr>
+<tr style="font-family:Arial;"><td> Operations Manager-Field Ops</td><td>2-5 Years</td><td><p>Should have a bike</p><p>B.E or MBA with 2-5 years experience in operations management.</p><p>Should have handled a team and blue collar employees</p><p>Male candidates are preferred</p><p>Should be okay to travel within the City</p><p>MS Office proficiency : Very Good</p><p>Able to come up with new ideas to improve customer performance standards</p></td></tr>
+<tr style="font-family:Arial;"><td> Sr Operations Manager</td><td>2-5 Years</td><td><p>Should have a bike</p><p>B.E or MBA with 2-5 years experience in operations management.</p><p>Should have handled a team and blue collar employees</p><p>Male candidates are preferred</p><p>Should be okay to travel within the City</p><p>MS Office proficiency : Very Good</p><p>Able to come up with new ideas to improve customer performance standards</p><p> Strong operational, analytical and numerical skills; Ability to use data effectively for devising operations strategy</p><p>Attention to detail and ability to critically think through and resolve problems;</p></td></tr>
+<tr style="font-family:Arial;"><td> Vendor Manager</td><td>1-3 Years</td><td><p>Should have a bike</p><p>B.E or MBA with 2-5 years experience in operations management.</p><p>Should have handled a team and blue collar employees</p><p>Male candidates are preferred</p><p>Should be okay to travel within the City</p><p>MS Office proficiency : Very Good</p><p>Able to come up with new ideas to improve customer performance standards</p><p> Strong operational, analytical and numerical skills; Ability to use data effectively for devising operations strategy</p><p>Attention to detail and ability to critically think through and resolve problems;</p></td></tr>
+
+</p></td></tr>
+</p></td></tr>
+</div>
+</table>
+</div>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+<footer>
+<div class="box" style="font-family: 'Open Sans Condensed', sans-serif;">
+<div class="social">
+<ul>
+<li><a href="AboutUs.html" target="_blank" style="text-decoration:none;color:black;background-color:white">About Us</a></li>
+<li><a href="T&C.html" target="_blank" style="text-decoration:none;color:black;background-color:white">Terms and Conditions</a></li>
+<li><a href="Refunds&Cancellation.html" target="_blank" style="text-decoration:none;color:black;background-color:white">Refunds and Cancellation Policy</a></li>
+<li><a href="Career.html"target="_self" style="text-decoration:none;color:black;background-color:white">Careers</a></li>
+</ul>
+</div>
+</div>
+<div class="fancy">
+<!--Connect with us,links-->
+&copy 2017, Flavors101
+</div>
+</footer>
+</html>
